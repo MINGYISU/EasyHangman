@@ -23,8 +23,8 @@ const char *whose_turn =
 const char *enter_letter = 
   "Please enter a letter: ";
 
-const char *not_letter = 
-  "The character %c is not a letter.\n";
+const char *not_valid = 
+  "The character %c is invalid.\n";
 
 const char *remain_chance =  
   "Chances Left: %d";
