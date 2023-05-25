@@ -21,7 +21,7 @@ extern const char *whose_turn;
 
 extern const char *enter_letter;
 
-extern const char *not_letter;
+extern const char *not_valid;
 
 extern const char *remain_chance;
 
