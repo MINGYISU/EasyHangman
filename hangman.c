@@ -25,7 +25,7 @@ bool all_out(struct player **arr, int n) {
 
 // swap(p1, p2) swaps p1 and p2
 // requires: p1, p2 are valid pointers
-// effects: modiefs p1, p2
+// effects: modifies p1, p2
 // time: O(1)
 void swap(struct player *p1, struct player *p2) {
   assert(p1);
@@ -164,7 +164,7 @@ void print_scoreboard(struct player **arr, int len) {
 
 int main(void) {
   while (1) {
-    system("clear");
+    system("clear"); // change to "cls" on Windows
     int result = 0;
     int nop = 0;
     int len = 0;
@@ -318,4 +318,6 @@ int main(void) {
       break;
     }
   }
+  
+  return 0;
 }
