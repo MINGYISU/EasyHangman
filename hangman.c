@@ -237,11 +237,11 @@ int main(void) {
 
       printf("%s", enter_letter);
       scanf(" %c", &guess);
-      assert(guess != 32 && guess != '*');
 
-      if (!((guess >= 'A' && guess <= 'Z') || 
-            (guess >= 'a' && guess <= 'z'))) {              // case 4 not letters, start a new round
-        printf(not_letter, guess);
+      if ((!(32 <= guess && guess <= '~') || 
+           guess == '*')) {              // case 4 not valid input, start a new round
+        printf(not_valid, guess);
+        players[cur]->chance--;
         continue;
       }
 
