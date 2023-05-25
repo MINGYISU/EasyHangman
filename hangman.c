@@ -238,7 +238,7 @@ int main(void) {
       printf("%s", enter_letter);
       scanf(" %c", &guess);
 
-      if ((!(32 <= guess && guess <= '~') || 
+      if ((!(32 < guess && guess <= '~') || 
            guess == '*')) {              // case 4 not valid input, start a new round
         printf(not_valid, guess);
         players[cur]->chance--;
