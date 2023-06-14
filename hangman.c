@@ -239,7 +239,7 @@ int main(void) {
       scanf(" %c", &guess);
 
       if ((!(32 < guess && guess <= '~') || 
-           guess == '*')) {              // case 4 not valid input, start a new round
+           guess == '*')) {              // not valid input, start a new round
         printf(not_valid, guess);
         players[cur]->chance--;
         continue;
@@ -249,12 +249,12 @@ int main(void) {
         guess -= 32;
       }
 
-      if (is_in(guessed, num_guessed, guess)) {             // case 3 is a guessed letter
+      if (is_in(guessed, num_guessed, guess)) {             // is a guessed letter
         printf(already_guessed, guess);
         continue;
       }
 
-      if (!is_in(word, len, guess)) {                       // case 2 not in the word
+      if (!is_in(word, len, guess)) {                       // not in the word
         guessed = check_guessed(guessed, &num_guessed, guess);
         printf(wrong, guess);
         players[cur]->chance--;
@@ -265,7 +265,7 @@ int main(void) {
         continue;                                            // if unsuccessful guess but still alive, start a new round
       }
 
-      for (int i = 0; i < len; ++i) {                       // case 1 unguessed letter and contained in the phrase
+      for (int i = 0; i < len; ++i) {                       // unguessed letter and contained in the phrase
         if (guess == word[i] && board[i] == '*') {
           board[i] = word[i];                               // if first time, show it on the board
           guessed = check_guessed(guessed, &num_guessed, guess);
